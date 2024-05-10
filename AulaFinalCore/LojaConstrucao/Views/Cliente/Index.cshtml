@@ -1,0 +1,33 @@
+﻿@model List<Tarefis>
+
+<h2>Lista de Clientes</h2>
+
+<p>
+    <a asp-action="Create">Adicionar Cliente</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ClienteId</th>
+            <th>Nome do Cliente</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cliente in Model)
+        {
+            <tr>
+                <td>@cliente.ClienteId</td>
+                <td>@cliente.NomeCliente</td>
+                <td>@cliente.Email</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@cliente.ClienteId" class="btn btn-primary">Editar</a> |
+                    <a asp-action="Detalhes" asp-route-id="@cliente.ClienteId" class="btn btn-success">Detalhes</a> |
+                    <a asp-action="Delete" asp-route-id="@cliente.ClienteId" class="btn btn-danger">Deletar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

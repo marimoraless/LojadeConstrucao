@@ -1,0 +1,35 @@
+﻿@model List<Produto>
+
+<h2>Rações</h2>
+
+<p>
+    <a asp-action="Create">Adicionar Produto</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ProdutoId</th>
+            <th>Nome do Produto</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in Model)
+        {
+            <tr>
+                <td>@produto.ProdutoId</td>
+                <td>@produto.NomeProduto</td>
+                <td></td>
+                <td>
+                    
+                    <a asp-action="Edit" asp-route-id="@produto.ProdutoId">Editar</a> |
+                    
+                    <a asp-action="Delete" asp-route-id="@produto.ProdutoId">Deletar</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
