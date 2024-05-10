@@ -10,9 +10,6 @@ public class ClienteController : Controller
 
 {
 
-    //  "_clientes" é uma variável estática que simula um banco de dados temporário na memória para este exemplo.
-
-    //  Ele é uma lista de clientes que é inicializada com alguns dados de exemplo no código do controlador.
 
     private static List<Cliente> _cliente = new List<Cliente>()
 
